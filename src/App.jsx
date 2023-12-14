@@ -1,6 +1,12 @@
+import { Outlet } from "react-router-dom"
+import NavBar from "./nav/NavBar"
+
 function App() {
   return (
-    <div className='text-4xl font-bold underline text-red-300'>hello world</div>
+    <div className='container flex flex-col'>
+      <NavBar/>
+      <Outlet/>
+    </div>
   )
 }
 

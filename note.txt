@@ -1,0 +1,17 @@
+ver.1 = no authentification
+{
+    - just show the post in database
+    - have only 2 page  home and explore
+    - in explore page user can search post by #tag 
+    - have post button
+    - can add tweet, like, comment and delete post
+}
+
+ver.2 = add authentification
+{
+    - user can retweet now
+    - user can manage their profile 
+    - user can send message to each others
+    - add message , profile page 
+    - in explore page user can search user by name
+}
