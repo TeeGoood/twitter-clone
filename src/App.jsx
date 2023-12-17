@@ -6,9 +6,9 @@ import TweetPopup from "./tweet/TweetPopup";
 function App() {
   const [isTweet, setIsTweet] = useState(false);
   return (
-    <div className='container flex'>
+    <div className='container m-auto max-w-8xl w-5/6 flex'>
       <NavBar setIsTweet={setIsTweet}/>
-      {/* <Outlet/> */}
+      <Outlet />
       {isTweet && <TweetPopup setIsTweet={setIsTweet}/>}
     </div>
   )

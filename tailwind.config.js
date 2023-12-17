@@ -8,6 +8,9 @@ export default {
     extend: {
       colors:{
         'blue-twitter': '#1d9bf0',
+      },
+      spacing:{
+        '100': '600px'
       }
     },
   },

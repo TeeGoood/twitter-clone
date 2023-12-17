@@ -16,7 +16,7 @@ const TweetPopup = ({setIsTweet}) => {
                         Drafts
                     </button>
                 </div>
-                <TweetForm/>
+                <TweetForm lineStart={5}/>
             </div>
         </div>
     );

@@ -1,29 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "/src/assets/icons/logo.svg"; 
-import home from "/src/assets/icons/home.svg";
-import explore from "/src/assets/icons/explore.svg";
+import homeIconActive from "/src/assets/icons/nav/home-active.svg";
+import homeIconInactive from "/src/assets/icons/nav/home-inactive.svg";
+import exploreIconActive from "/src/assets/icons/nav/explore-active.svg";
+import exploreIconInactive from "/src/assets/icons/nav/explore-inactive.svg";
 import Profile from "./Profile";
 
 const NavBar = ({setIsTweet}) => {
+    function checkRoute(pathName){
+        return ('/' + pathName) === useLocation().pathname;
+    }
+
     return (  
-        <div className="nav-bar w-56">
+        <div className="nav-bar w-72 p-2">
             <div className="flex-container flex flex-col items-start">
-                {[
-                    ['', '/home',Logo],
-                    ['Home', '/home', home],
-                    ['Explore', '/explore', explore],
-                ].map(([text, url, icon], id) => {
-                    const div_style = (id !== 0) ? "flex hover:bg-zinc-200 align-middle py-3 px-5 rounded-full" : "p-2 py-3 hover:bg-zinc-200 rounded-full ml-2" ;
-                    const image_size = (id !== 0) ? "w-7 mr-2" : "w-10";
-                    return (<Link 
-                                to={url} 
-                                className={div_style}>
-                                    <img src={icon} alt={text} className={image_size}/>
-                                    {text}
-                            </Link>);
-                })}
+                <Link 
+                    to='/home' 
+                    className="transition p-2 py-3 hover:bg-zinc-200 rounded-full ml-2">
+                        <img src={Logo} alt="logo" className="w-10"/>
+                </Link>
+                <Link 
+                    to='/home' 
+                    className="transition flex hover:bg-zinc-200 align-middle py-3 px-5 rounded-full">
+                        <img src={checkRoute('home') ? homeIconActive : homeIconInactive} alt="home-icon" className="w-7 mr-2"/>
+                        <span>Home</span>
+                </Link>
+                <Link 
+                    to='/explore' 
+                    className="transition flex hover:bg-zinc-200 align-middle py-3 px-5 rounded-full">
+                        <img src={checkRoute('explore') ? exploreIconActive : exploreIconInactive} alt="home-icon" className="w-7 mr-2"/>
+                        <span>Explore</span>
+                </Link>
                 <button 
-                    className="font-bold  bg-blue-twitter text-white w-full p-2 rounded-full mt-2 hover:opacity-70"
+                    className="font-bold  bg-blue-twitter text-white w-48 h-12 text-lg p-2 rounded-full hover:opacity-70 transition mt-20 shadow-lg"
                     onClick={() => setIsTweet(true)}>
                         Post
                 </button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const DynamicTextArea = () => {
+const DynamicTextArea = ({lineStart}) => {
   const [text, setText] = useState('');
 
   const handleTextChange = (event) => {
@@ -9,7 +9,7 @@ const DynamicTextArea = () => {
 
   const calculateRows = () => {
     const newlineCount = (text.match(/\n/g) || []).length;
-    const minRows = 5;
+    const minRows = lineStart;
     return Math.max(minRows, newlineCount);
   };
 
