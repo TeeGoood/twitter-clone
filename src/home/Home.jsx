@@ -3,7 +3,7 @@ import HomeSide from "./HomeSide";
 
 const Home = () => {
     return (  
-        <div className="home flex-1 flex h-screen">
+        <div className="home flex-1 flex">
             <HomeContent/>
             <HomeSide/>
         </div>

@@ -19,7 +19,7 @@ const PostCard = ({post}) => {
     }
 
     return (  
-        <div className="post flex items-start p-4 gap-4 border-zinc-200 border hover:bg-zinc-200 transition">
+        <div className="post flex items-start p-4 gap-4 border-x-0 border-zinc-200 border hover:bg-zinc-200 transition">
             <div className="">
                 <img src={post.user.profilePic} alt="profile-pic" className="w-10 h-10 rounded-full"/>
             </div>

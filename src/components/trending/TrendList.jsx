@@ -19,7 +19,9 @@ const TrendList = () => {
 
     return (  
         <div>
-            { hashtags.map((hastag) => <TrendCard hastag={hastag} />)}
+            { hashtags.map((hastag, id) => (
+            id < 3 && <TrendCard hastag={hastag} />))
+        }
         </div>
     );
 }

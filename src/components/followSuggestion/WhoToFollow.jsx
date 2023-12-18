@@ -23,8 +23,24 @@ const WhoToFollow = () => {
                     tag   : "putt",
                     image : profilePic3
                 },
-            ].map((profile) => (
-                <FollowCard profile={profile} />
+                {
+                    name  : "TEE",
+                    tag   : "tee",
+                    image : profilePic
+                },
+                {
+                    name  : "K",
+                    tag   : "k",
+                    image : profilePic2
+                },
+                {
+                    name  : "PUTT",
+                    tag   : "putt",
+                    image : profilePic3
+                },
+                
+            ].map((profile, id) => (
+                id < 3 && <FollowCard profile={profile} />
             ))
             }
         </div>

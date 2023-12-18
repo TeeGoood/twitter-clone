@@ -21,15 +21,15 @@ const NavBar = ({setIsTweet}) => {
                 </Link>
                 <Link 
                     to='/home' 
-                    className="transition flex hover:bg-zinc-200 align-middle py-3 px-5 rounded-full">
-                        <img src={checkRoute('home') ? homeIconActive : homeIconInactive} alt="home-icon" className="w-7 mr-2"/>
-                        <span>Home</span>
+                    className="transition flex items-center hover:bg-zinc-200 py-3 px-5 rounded-full text-lg">
+                        <img src={checkRoute('home') || checkRoute('') ? homeIconActive : homeIconInactive} alt="home-icon" className="w-7 mr-2"/>
+                        <span className={(checkRoute('home') || checkRoute('')) && "font-semibold"}>Home</span>
                 </Link>
                 <Link 
                     to='/explore' 
-                    className="transition flex hover:bg-zinc-200 align-middle py-3 px-5 rounded-full">
+                    className="transition flex items-center hover:bg-zinc-200 py-3 px-5 rounded-full text-lg">
                         <img src={checkRoute('explore') ? exploreIconActive : exploreIconInactive} alt="home-icon" className="w-7 mr-2"/>
-                        <span>Explore</span>
+                        <span className={checkRoute('explore') && "font-semibold"}>Explore</span>
                 </Link>
                 <button 
                     className="font-bold  bg-blue-twitter text-white w-48 h-12 text-lg p-2 rounded-full hover:opacity-70 transition mt-20 shadow-lg"
