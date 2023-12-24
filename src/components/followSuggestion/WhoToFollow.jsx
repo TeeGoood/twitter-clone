@@ -1,4 +1,4 @@
-import FollowCard from "./followCard";
+import FollowCard from "./FollowCard";
 import profilePic from "/src/assets/image/profile-pic.webp";
 import profilePic2 from "/src/assets/image/profile-pic2.jpg";
 import profilePic3 from "/src/assets/image/profile-pic3.jpg";
